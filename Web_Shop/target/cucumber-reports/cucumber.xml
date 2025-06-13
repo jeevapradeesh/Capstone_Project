@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="162.261" tests="10" skipped="0" failures="1" errors="0" timestamp="2025-06-13T04:51:36.427572600Z">
+<testcase classname="Account Creation" name="Sucessfull Account Creation" time="15.876">
+<system-out><![CDATA[
+Given the user is on the registration page..................................passed
+When the user registers with valid details..................................passed
+Then the user account is created............................................passed
+And the user login with registered email and password.......................passed
+Then the user verifies the text message.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Account Creation" name="Account Creation Failure with existing email" time="12.2">
+<failure type="java.lang.AssertionError" message="Account creation failed with error: The specified email already exists">
+<![CDATA[java.lang.AssertionError: Account creation failed with error: The specified email already exists
+	at org.testng.Assert.fail(Assert.java:111)
+	at pages.AccountCreation.failedAccountCreation(AccountCreation.java:116)
+	at stepDefinitions.AccountCreationStepDefinition.the_user_registers_with_an_existing_email(AccountCreationStepDefinition.java:57)
+	at ✽.the user registers with an existing email(file:///D:/Web_Shop/src/test/resources/features/addAccount.feature:12)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the user is on the registration page..................................passed
+When the user registers with an existing email..............................failed
+Then the registration should fail with an appropriate error message.........skipped
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Sucessfully Logged In - #1.1" time="11.982">
+<system-out><![CDATA[
+Given the user is on the login page.........................................passed
+When the user enters email as "jeeva344323@gmail.com" and password as "Qwert@123" and click on the login button.passed
+Then the user validates the text message....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Login with invalid details - #1.1" time="21.358">
+<system-out><![CDATA[
+Given the user is on the login page.........................................passed
+When the user enters email as "example@gmail.com" and password as "example12" and click on the login button.passed
+Then the user validates the error message...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="CRUD operation" name="GET user by ID" time="13.118">
+<system-out><![CDATA[
+Given I set the base URI to "https://reqres.in/api".........................passed
+When I sent a GET request to endpoint "/users/5"............................passed
+Then the response status code should be 200.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="CRUD operation" name="POST method to add a new user" time="12.83">
+<system-out><![CDATA[
+Given I set the base URI to "https://reqres.in/api".........................passed
+When I send a POST request to endpoint "/users" with body:..................passed
+Then the response status code should be 201.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="CRUD operation" name="PUT method to update a user" time="11.659">
+<system-out><![CDATA[
+Given I set the base URI to "https://reqres.in/api".........................passed
+When I send a PUT request to endpoint "/users/5" with body:.................passed
+Then the response status code should be 200.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="CRUD operation" name="DELETE a user" time="10.055">
+<system-out><![CDATA[
+Given I set the base URI to "https://reqres.in/api".........................passed
+When I send a DELETE request to endpoint "/users/5".........................passed
+Then the response status code should be 204.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Select Product" name="Selecting a product - #1.1" time="25.789">
+<system-out><![CDATA[
+Given the user is on the login page.........................................passed
+When the user enters email as "jeeva344323@gmail.com" and password as "Qwert@123" and click on the login button.passed
+Then the user validates the text message....................................passed
+When the user select the product "Fiction"..................................passed
+And the user add the product to the cart and click on add to cart button....passed
+Then the product is visible in the cart.....................................passed
+Then the user proceeds the checkout.........................................passed
+Then the user completes the billing process.................................passed
+Then user verifies the order confirmation...................................passed
+And the user click on logout................................................passed
+Then the user validate text message.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Select Product" name="Selecting a non-existent product - #1.1" time="25.662">
+<system-out><![CDATA[
+Given the user is on the login page.........................................passed
+When the user enters email as "jeeva344323@gmail.com" and password as "Qwert@123" and click on the login button.passed
+Then the user validates the text message....................................passed
+Then the product "Headphone" should not be found............................passed
+And the user click on logout................................................passed
+Then the user validate text message.........................................passed
+]]></system-out>
+</testcase>
+</testsuite>

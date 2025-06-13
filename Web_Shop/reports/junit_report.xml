@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="55.857" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-06-13T07:54:29.173441500Z">
+<testcase classname="Select Product" name="Selecting a product - #1.1" time="26.076">
+<system-out><![CDATA[
+Given the user is on the login page.........................................passed
+When the user enters email as "jeeva344323@gmail.com" and password as "Qwert@123" and click on the login button.passed
+Then the user validates the text message....................................passed
+When the user select the product "Fiction"..................................passed
+And the user add the product to the cart and click on add to cart button....passed
+Then the product is visible in the cart.....................................passed
+Then the user proceeds the checkout.........................................passed
+Then the user completes the billing process.................................passed
+Then user verifies the order confirmation...................................passed
+And the user click on logout................................................passed
+Then the user validate text message.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Select Product" name="Selecting a non-existent product - #1.1" time="28.389">
+<system-out><![CDATA[
+Given the user is on the login page.........................................passed
+When the user enters email as "jeeva344323@gmail.com" and password as "Qwert@123" and click on the login button.passed
+Then the user validates the text message....................................passed
+Then the product "Headphone" should not be found............................passed
+And the user click on logout................................................passed
+Then the user validate text message.........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
